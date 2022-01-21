@@ -1,7 +1,0 @@
-C:\Users\Данила\source\repos\fLexer\fLexer\bin\Debug\fLexer.exe.config
-C:\Users\Данила\source\repos\fLexer\fLexer\bin\Debug\fLexer.exe
-C:\Users\Данила\source\repos\fLexer\fLexer\bin\Debug\fLexer.pdb
-C:\Users\Данила\source\repos\fLexer\fLexer\obj\Debug\fLexer.csproj.AssemblyReference.cache
-C:\Users\Данила\source\repos\fLexer\fLexer\obj\Debug\fLexer.csproj.CoreCompileInputs.cache
-C:\Users\Данила\source\repos\fLexer\fLexer\obj\Debug\fLexer.exe
-C:\Users\Данила\source\repos\fLexer\fLexer\obj\Debug\fLexer.pdb

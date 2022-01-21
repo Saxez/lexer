@@ -1,0 +1,75 @@
+PROGRAM Syntax(INPUT, OUTPUT);
+VAR
+  Ch1, Ch2, Ch3: CHAR;
+BEGIN
+  READ(Ch1, Ch2, Ch3);
+  WRITE(Ch1);
+  WHILE NOT EOLN 
+  DO
+    BEGIN
+      IF Ch3 = ' '
+      THEN
+        READ(Ch3)
+      ELSE
+        IF Ch3 = '{'
+        THEN
+          BEGIN
+            WHILE Ch3 <> '}'
+            DO
+              BEGIN
+                Ch1 := Ch2;
+                Ch2 := Ch3;
+                READ(Ch3);
+                WRITE(Ch1)
+              END;
+          END
+        ELSE
+          IF Ch3 = ''''
+          THEN
+            BEGIN
+              Ch1 := Ch2;
+              Ch2 := Ch3;
+              READ(Ch3);
+              WRITE(Ch1); 
+              WHILE Ch2 <> ''''
+              DO
+                BEGIN
+                  Ch1 := Ch2;
+                  READ(Ch2);
+                  WRITE(Ch1)
+                END;
+            END
+          ELSE   
+            BEGIN  
+              IF (Ch1 = ';') AND (Ch2 <> ';') AND (Ch2 <> 'E')
+              THEN  
+                BEGIN
+                  WRITELN;
+                  WRITE('  ')
+                END;
+              IF (Ch2 = 'E') AND (Ch3 = 'N')
+              THEN
+                BEGIN
+                  WRITELN
+                END;
+              IF (Ch1 = 'I') AND (Ch2 = 'N') 
+              THEN
+                BEGIN
+                  WRITE('N');
+                  WRITELN;
+                  WRITE('  ');
+                  Ch1 := Ch2;
+                  Ch2 := Ch3;
+                  READ(Ch3)
+                END
+              ELSE
+                BEGIN  
+                  Ch1 := Ch2;
+                  Ch2 := Ch3;
+                  READ(Ch3);
+                  WRITE(Ch1)  
+                END;
+            END;
+    END;
+  WRITE(Ch2, Ch3)
+END.

@@ -1,0 +1,7 @@
+C:\Users\Данила\source\repos\NEW_FLEXER_JOSKA\NEW_FLEXER_JOSKA\bin\Debug\NEW_FLEXER_JOSKA.exe.config
+C:\Users\Данила\source\repos\NEW_FLEXER_JOSKA\NEW_FLEXER_JOSKA\bin\Debug\NEW_FLEXER_JOSKA.exe
+C:\Users\Данила\source\repos\NEW_FLEXER_JOSKA\NEW_FLEXER_JOSKA\bin\Debug\NEW_FLEXER_JOSKA.pdb
+C:\Users\Данила\source\repos\NEW_FLEXER_JOSKA\NEW_FLEXER_JOSKA\obj\Debug\NEW_FLEXER_JOSKA.csproj.AssemblyReference.cache
+C:\Users\Данила\source\repos\NEW_FLEXER_JOSKA\NEW_FLEXER_JOSKA\obj\Debug\NEW_FLEXER_JOSKA.csproj.CoreCompileInputs.cache
+C:\Users\Данила\source\repos\NEW_FLEXER_JOSKA\NEW_FLEXER_JOSKA\obj\Debug\NEW_FLEXER_JOSKA.exe
+C:\Users\Данила\source\repos\NEW_FLEXER_JOSKA\NEW_FLEXER_JOSKA\obj\Debug\NEW_FLEXER_JOSKA.pdb

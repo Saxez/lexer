@@ -1,40 +1,50 @@
-token:READLN |type: readln token |pos: 0 |st: 0
-token:( |type: open bracket token |pos: 6 |st: 0
-token:) |type: close bracket token |pos: 12 |st: 0
-token:; |type: end action token |pos: 13 |st: 0
-token:I |type: variable token |pos: 16 |st: 0
-token::= |type: equate token |pos: 18 |st: 0
-token:15 |type: variable token |pos: 21 |st: 0
-token:; |type: end action token |pos: 23 |st: 0
-token:I |type: variable token |pos: 26 |st: 0
-token::= |type: equate token |pos: 28 |st: 0
-token:15 |type: variable token |pos: 31 |st: 0
-token:; |type: end action token |pos: 33 |st: 0
-token:PROGRAM |type: start program token |pos: 0 |st: 1
-token:TEST |type: variable token |pos: 8 |st: 1
-token:PROGRAM |type: start program token |pos: 13 |st: 1
-token:; |type: end action token |pos: 20 |st: 1
-token:VAR |type: declaring block variables token |pos: 0 |st: 2
-token:I |type: variable token |pos: 2 |st: 3
-token:INTEGER |type: variables type token |pos: 5 |st: 3
-token:; |type: end action token |pos: 12 |st: 3
-token:C |type: variable token |pos: 2 |st: 4
-token:, |type: split token |pos: 3 |st: 4
-token:CH |type: variable token |pos: 5 |st: 4
-token:CHAR |type: variables type token |pos: 9 |st: 4
-token:; |type: end action token |pos: 13 |st: 4
-token:BEGIN |type: Begin token |pos: 0 |st: 5
-token:WRITELN |type: writeln token |pos: 2 |st: 6
-token:( |type: open bracket token |pos: 9 |st: 6
-token:) |type: close bracket token |pos: 27 |st: 6
-token:; |type: end action token |pos: 28 |st: 6
+token:I |type: variable token |pos: 0 |st: 0
+token:= |type: equality token |pos: 2 |st: 0
+token:15 |type: variable token |pos: 4 |st: 0
+token:; |type: end action token |pos: 6 |st: 0
+token:READLN |type: readln token |pos: 0 |st: 1
+token:( |type: open bracket token |pos: 6 |st: 1
+token:) |type: close bracket token |pos: 12 |st: 1
+token:; |type: end action token |pos: 13 |st: 1
+token:I |type: variable token |pos: 16 |st: 1
+token::= |type: equate token |pos: 18 |st: 1
+token:15 |type: variable token |pos: 21 |st: 1
+token:; |type: end action token |pos: 23 |st: 1
+token:I |type: variable token |pos: 26 |st: 1
+token::= |type: equate token |pos: 28 |st: 1
+token:15 |type: variable token |pos: 31 |st: 1
+token:; |type: end action token |pos: 33 |st: 1
+token:I |type: variable token |pos: 35 |st: 1
+token:= |type: equality token |pos: 37 |st: 1
+token:15 |type: variable token |pos: 39 |st: 1
+token:; |type: end action token |pos: 41 |st: 1
+token:PROGRAM |type: start program token |pos: 0 |st: 2
+token:TEST |type: variable token |pos: 8 |st: 2
+token:PROGRAM |type: start program token |pos: 13 |st: 2
+token:; |type: end action token |pos: 20 |st: 2
+token:VAR |type: declaring block variables token |pos: 0 |st: 3
+token:I |type: variable token |pos: 2 |st: 4
+token:: |type: declaring variable token |pos: 3 |st: 4
+token:INTEGER |type: variables type token |pos: 5 |st: 4
+token:; |type: end action token |pos: 12 |st: 4
+token:C |type: variable token |pos: 2 |st: 5
+token:, |type: split token |pos: 3 |st: 5
+token:CH |type: variable token |pos: 5 |st: 5
+token:: |type: declaring variable token |pos: 7 |st: 5
+token:CHAR |type: variables type token |pos: 9 |st: 5
+token:; |type: end action token |pos: 13 |st: 5
+token:BEGIN |type: Begin token |pos: 0 |st: 6
 token:WRITELN |type: writeln token |pos: 2 |st: 7
 token:( |type: open bracket token |pos: 9 |st: 7
-token:) |type: close bracket token |pos: 14 |st: 7
-token:; |type: end action token |pos: 15 |st: 7
+token:) |type: close bracket token |pos: 27 |st: 7
+token:; |type: end action token |pos: 28 |st: 7
 token:WRITELN |type: writeln token |pos: 2 |st: 8
 token:( |type: open bracket token |pos: 9 |st: 8
-token:) |type: close bracket token |pos: 26 |st: 8
-token:; |type: end action token |pos: 27 |st: 8
-token:END |type: end block token |pos: 0 |st: 10
-token:. |type: end program token |pos: 3 |st: 10
+token:) |type: close bracket token |pos: 14 |st: 8
+token:; |type: end action token |pos: 15 |st: 8
+token:WRITELN |type: writeln token |pos: 2 |st: 9
+token:( |type: open bracket token |pos: 9 |st: 9
+token:) |type: close bracket token |pos: 26 |st: 9
+token:; |type: end action token |pos: 27 |st: 9
+token:END |type: end block token |pos: 0 |st: 11
+token:. |type: end program token |pos: 3 |st: 11

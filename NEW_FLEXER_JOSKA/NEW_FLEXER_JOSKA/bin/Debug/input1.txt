@@ -1,4 +1,5 @@
-READLN('''I');  I := 15;  I := 15;
+I = 15;
+READLN('''I');  I := 15;  I := 15; I = 15;
 PROGRAM TEST PROGRAM;
 VAR
   I: INTEGER;

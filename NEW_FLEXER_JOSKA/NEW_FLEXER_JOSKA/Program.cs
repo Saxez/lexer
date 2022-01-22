@@ -43,7 +43,6 @@ namespace NEW_FLEXER_JOSKA
 
         static Dictionary<string, string> oneSymbolTokens = new Dictionary<string, string>()
         {
-
             {";", "end action token" },
             {":", "declaring variable token" },
             {"=", "equality token" },
@@ -89,42 +88,37 @@ namespace NEW_FLEXER_JOSKA
             bool isCom = false;
             foreach (string st in paramss)
             {
-                SearchTokens(ref tokens, st, col,ref isCom);
+                SearchTokens(ref tokens, st, col, ref isCom);
                 col++;
             }
             WriteOut(tokens);
         }
 
-        static void WriteOut(List<Token> tokens)
-        {
-            StreamWriter f = new StreamWriter("output.txt");
-            foreach (Token token in tokens)
-            {
-                string output = "token:" + token.name + " |type: " + token.type + " |pos: " + token.pos + " |st: " + token.column;
-                f.WriteLine(output);
-            }
-            f.Close();
-        }
-        static void SearchTokens(ref List<Token> tokens, string param, int col,ref bool isCom)
+        static void SearchTokens(ref List<Token> tokens, string param, int col, ref bool isCom)
         {
             string bufferCh = "";
-            string bufferSym = "";
             int count = 0;
             bool isComLocal = false;
             bool ex = false;
             char dop = '~';
             for (int i = 0; i < param.Length; i++)
             {
-                GetDel(param[i],ref isCom, isComLocal);
+                GetDel(param[i], ref isCom, isComLocal);
                 if (i + 1 < param.Length)
                 {
                     GetLocalDel(param[i], param[i + 1], ref isComLocal, ref count);
-                    if(!isCom && !isComLocal)
+                    if (!isCom && !isComLocal)
                     {
                         isExit(param[i], param[i + 1], ref ex);
                     }
                 }
-                if( i == param.Length-1)
+
+                if (ex)
+                {
+                    return;
+                }
+
+                if (i == param.Length - 1)
                 {
                     dop = ' ';
                 }
@@ -132,30 +126,21 @@ namespace NEW_FLEXER_JOSKA
                 {
                     dop = param[i + 1];
                 }
-                ChecSym(param[i], dop, ref bufferCh,ref bufferSym,ref i,ref tokens, col, isCom, isComLocal);
+                ChecSym(param[i], dop, ref bufferCh, ref i, ref tokens, col, isCom, isComLocal);
             }
-            AfterFor(tokens, bufferCh, bufferSym, col);
+            AfterFor(tokens, bufferCh, col);
         }
-        static void AfterFor(List<Token> tokens, string bufferCh, string bufferSym, int col)
+        static void AfterFor(List<Token> tokens, string bufferCh, int col)
         {
             if (bufferCh.Length > 0)
             {
                 tokens.Add(GetToken(bufferCh, col, bufferCh.Length));
             }
-            if (bufferSym.Length > 0)
-            {
-                tokens.Add(GetToken(bufferSym, col, bufferCh.Length));
-            }
         }
-        static void ChecSym(char ch1, char ch2, ref string bufferCh, ref string bufferSym, ref int i, ref List<Token> tokens, int col, bool isCom, bool isComLocal)
+        static void ChecSym(char ch1, char ch2, ref string bufferCh, ref int i, ref List<Token> tokens, int col, bool isCom, bool isComLocal)
         {
             if ((char.IsDigit(ch1) || char.IsLetter(ch1)) && !isCom && !isComLocal)
             {
-                if (bufferSym.Length > 0)
-                {
-                    tokens.Add(GetToken(bufferCh, col, i));
-                }
-                bufferSym = "";
                 bufferCh += ch1.ToString();
             }
             else if ((ch1 != ('\'') && ch1 != ('{') && ch1 != ('/')) && !isCom && !isComLocal)
@@ -167,7 +152,6 @@ namespace NEW_FLEXER_JOSKA
                 if (!tw.Contains(ch1) && ch1 != ' ')
                 {
                     tokens.Add(GetToken(ch1.ToString(), col, i + 1));
-                    bufferSym = "";
                 }
                 else if (ch1 != ' ')
                 {
@@ -175,6 +159,10 @@ namespace NEW_FLEXER_JOSKA
                     {
                         tokens.Add(GetToken((ch1.ToString() + ch2.ToString()).ToString(), col, i + 2));
                         i++;
+                    }
+                    else
+                    {
+                        tokens.Add(GetToken(ch1.ToString(), col, i + 1));
                     }
                 }
                 bufferCh = "";
@@ -198,7 +186,7 @@ namespace NEW_FLEXER_JOSKA
             {
                 isCom = false;
             }
-            
+
         }
         static void GetLocalDel(char ch1, char ch2, ref bool isComLocal, ref int count)
         {
@@ -221,7 +209,7 @@ namespace NEW_FLEXER_JOSKA
             token.name = name;
             token.pos = pos - name.Length;
             token.column = col;
-            if(bigTokens.ContainsKey(name))
+            if (bigTokens.ContainsKey(name))
             {
                 token.type = bigTokens[name];
                 return token;
@@ -239,5 +227,18 @@ namespace NEW_FLEXER_JOSKA
             token.type = "variable token";
             return token;
         }
+
+
+        static void WriteOut(List<Token> tokens)
+        {
+            StreamWriter f = new StreamWriter("output.txt");
+            foreach (Token token in tokens)
+            {
+                string output = "token:" + token.name + " |type: " + token.type + " |pos: " + token.pos + " |st: " + token.column;
+                f.WriteLine(output);
+            }
+            f.Close();
+        }
     }
+
 }

@@ -4,6 +4,7 @@ token:15 |type: variable token |pos: 4 |st: 0
 token:; |type: end action token |pos: 6 |st: 0
 token:READLN |type: readln token |pos: 0 |st: 1
 token:( |type: open bracket token |pos: 6 |st: 1
+token:''I |type: literal token |pos: 8 |st: 1
 token:) |type: close bracket token |pos: 12 |st: 1
 token:; |type: end action token |pos: 13 |st: 1
 token:I |type: variable token |pos: 16 |st: 1
@@ -36,14 +37,17 @@ token:; |type: end action token |pos: 13 |st: 5
 token:BEGIN |type: Begin token |pos: 0 |st: 6
 token:WRITELN |type: writeln token |pos: 2 |st: 7
 token:( |type: open bracket token |pos: 9 |st: 7
+token:'' NOT EQUAL <> |type: literal token |pos: 11 |st: 7
 token:) |type: close bracket token |pos: 27 |st: 7
 token:; |type: end action token |pos: 28 |st: 7
 token:WRITELN |type: writeln token |pos: 2 |st: 8
 token:( |type: open bracket token |pos: 9 |st: 8
+token:'' |type: literal token |pos: 11 |st: 8
 token:) |type: close bracket token |pos: 14 |st: 8
 token:; |type: end action token |pos: 15 |st: 8
 token:WRITELN |type: writeln token |pos: 2 |st: 9
 token:( |type: open bracket token |pos: 9 |st: 9
+token:NOT EQUAL <>'' |type: literal token |pos: 11 |st: 9
 token:) |type: close bracket token |pos: 26 |st: 9
 token:; |type: end action token |pos: 27 |st: 9
 token:END |type: end block token |pos: 0 |st: 11

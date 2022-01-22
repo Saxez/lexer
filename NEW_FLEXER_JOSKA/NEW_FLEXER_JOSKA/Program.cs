@@ -101,6 +101,7 @@ namespace NEW_FLEXER_JOSKA
             bool isComLocal = false;
             bool ex = false;
             char dop = '~';
+            string buffLit = "";
             for (int i = 0; i < param.Length; i++)
             {
                 GetDel(param[i], ref isCom, isComLocal);
@@ -112,12 +113,28 @@ namespace NEW_FLEXER_JOSKA
                         isExit(param[i], param[i + 1], ref ex);
                     }
                 }
-
+                
                 if (ex)
                 {
                     return;
                 }
-
+                if (isComLocal)
+                {
+                    buffLit += param[i];
+                }
+                else
+                {
+                    if (buffLit.Length > 1)
+                    {
+                        Token token = new Token();
+                        token.name = buffLit.Remove(0, 1);
+                        token.pos = i - buffLit.Length + 1;
+                        token.column = col;
+                        token.type = "literal token";
+                        tokens.Add(token);
+                    }
+                    buffLit = "";
+                }
                 if (i == param.Length - 1)
                 {
                     dop = ' ';
